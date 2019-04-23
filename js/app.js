@@ -1,12 +1,11 @@
+var content = $(".container");  
+content.hide();
+
 $(document).ready(function() {
   
-  var content = $(".container");  
   var display = $(".gif-display"); 
   var intro = $(".intro-screen");
   
-  content.hide(function() {
-    console.log("container hidden");
-  });
   
   setTimeout(function() {
     loadTransition();
@@ -57,7 +56,6 @@ $(document).ready(function() {
                   clearCountdown;
                   res.data.forEach(function(item) {
                     var giphyURL = item.images.fixed_height.url;
-                    console.log(res.data);
                     display.append("<img class='gif' src='" + giphyURL + "'></img>");
                 });
             }
