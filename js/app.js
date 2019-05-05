@@ -8,8 +8,7 @@ $(document).ready(function() {
   
   
   setTimeout(function() {
-    loadTransition();
-    intro.fadeOut();
+    intro.fadeOut(3000);
     content.fadeIn(1000, function() {
     });
     },1500);

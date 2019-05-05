@@ -1,4 +1,3 @@
-
 /* GENERAL STYLES */
 
 * html {
@@ -35,7 +34,7 @@ body {
 
 .intro-screen img {
   width: 100%;
-  height: 100%;
+  height: auto;
   margin: 0;
   z-index: 1;
 }
@@ -80,6 +79,7 @@ img {
   margin: 10px;
 }
 
+
 /* NAV SECTION */
 
 .nav {
@@ -96,9 +96,10 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  flex-wrap: wrap;
   padding: 10px 10px 5px 22px;
-  background-color: white;
-  z-index: 10;
+  background-color: #0a0a0a;
+  border-bottom: 3px solid #fff;
   cursor: pointer;
 }
 
@@ -107,7 +108,6 @@ img {
   font-weight: 100;
   text-decoration: none;
   padding: 0 10px 0 10px;
-  background-color: black;
   cursor: pointer;
   z-index: 10;
 }
@@ -153,7 +153,6 @@ img {
   transition: transform 0.2s, -webkit-transform 0.2s;
   padding: 5px;
   margin: 1px;
-  background-color: black;
 }
 
 .nav ul li:hover {
@@ -164,9 +163,6 @@ img {
 }
 
 .nav .search {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 25%;
-          flex: 1 1 25%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -193,28 +189,6 @@ img {
   margin-right: 5px;
 }
 
-@media only screen 
-and (max-width : 1200px) { 
-  body {
-    background-position: center;
-  }
-}
-
-@media only screen 
-and (max-width : 820px) { 
-  .nav {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    font-size: 0.9em;
-  }
-}
 
 /* GIF RESULTS SECTION */
 
@@ -243,6 +217,7 @@ and (max-width : 820px) {
   background-image: url("../images/tv_test_card.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center top;
   background-color: black;
   font-family: 'Amatic SC', cursive;
   color: #ffffff;
@@ -254,6 +229,7 @@ and (max-width : 820px) {
           flex: 1 1 auto;
 }
 
+
 /* SCREEN WIPE TRANSITIONS */
 
 .screen-wipe-top {
@@ -263,7 +239,7 @@ and (max-width : 820px) {
     position: fixed;
     z-index: 11;
     top: -100%;
-    top: -100vh;
+    top: -100vh; /* Safari fix */
 }
 
 .screen-wipe-bottom {
@@ -273,7 +249,7 @@ and (max-width : 820px) {
     position: fixed;
     z-index: 11;
     bottom: -100%;
-    bottom: -100vh;
+    bottom: -100vh; /* Safari fix */
 }
 
 .content-overlay {
@@ -284,6 +260,39 @@ and (max-width : 820px) {
     position: fixed;
     z-index: 9;
 }
+
+
+/* MEDIA QUERIES */ 
+
+@media only screen 
+and (max-width : 820px) { 
+  .nav {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    font-size: 0.9em;
+  }
+}
+
+@media only screen and (max-width: 1075px) {
+  .search {
+    width: 90%;
+  }
+}
+
+@media only screen 
+and (max-width : 1200px) { 
+  body {
+    background-position: center;
+  }
+}
+
 
 
 
