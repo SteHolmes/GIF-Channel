@@ -263,6 +263,7 @@ and (max-width : 820px) {
     position: fixed;
     z-index: 11;
     top: -100%;
+    top: -100vh;
 }
 
 .screen-wipe-bottom {
@@ -272,6 +273,7 @@ and (max-width : 820px) {
     position: fixed;
     z-index: 11;
     bottom: -100%;
+    bottom: -100vh;
 }
 
 .content-overlay {
